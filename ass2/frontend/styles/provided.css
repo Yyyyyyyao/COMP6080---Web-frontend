@@ -1,0 +1,189 @@
+
+/* base styles, feel free to edit */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    
+    width: 100vw;
+    height: 100vh;
+    font-family: -apple-system, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+span{
+    overflow-wrap: break-word;
+}
+
+header{
+    display: flex;
+    flex: 1;
+    margin-bottom: 2%;
+    flex-direction: column;
+}
+
+#website-title{
+    flex: 1;
+}
+
+#header-channel{
+    flex: 1;
+    
+}
+
+#header-user{
+    margin-top: 1%;
+    flex: 1;
+}
+
+main{
+    flex: 9;
+    display: flex;
+    justify-content: center;
+}
+
+footer{
+    flex: 0.5;
+}
+
+
+
+#popWindow{
+    width: 100vw;
+    height: 100vh;
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.popWindow-title{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    flex: 2;
+    font-weight: bold;
+}
+
+.popWindow-formInput{
+    flex: 3;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.popWindow-btns{
+    flex: 1;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#popWindow-form-confirmedpassword{
+    display: none;
+}
+
+#popWindow-form-name{
+    display: none;
+}
+
+#signup_btn{
+    display: none;
+}
+
+#channel-public-list{
+    display: none;
+}
+
+#channel-private-list{
+    display: none;
+}
+
+#chatbox{
+    width: 80%;
+    height: 80vh;
+    overflow: scroll;
+    background-color:cornsilk;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#chatbox-display{
+    width: 100%;
+    height: 75%;
+    justify-self: stretch;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#chatbox-sendBtn{
+    align-self: end;
+    width: 30%;
+    height: 100%;
+}
+#chatbox-textinput-div{
+    width: 100%;
+    height: 10%;
+    background-color: whitesmoke;
+}
+
+#chatbox-toolbar{
+    display: flex;
+    background-color: grey;
+    justify-content: end;
+}
+
+#chatbox-channel-info{
+    width: 100%;
+    height: 10%;
+    /* background-color: white; */
+    background-color: rgb(236, 237, 232);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.channel-category{
+    display: flex;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+.template{
+    display: none;
+}
+
+.classPulledPinIcon{
+    display: block;
+}
+
+.classPushedPinIcon{
+    display: none;
+}
+
+
+@media (max-width: 700px){
+    #chatbox-channel-info{
+        height: 30%;
+        flex-direction: column;
+        justify-items: stretch;
+        align-items: stretch;
+    }
+    
+    #chatbox-display{
+        height: 55%;
+    }
+}
+
+#offcanvasTop-createChannel{
+    width: 100%;
+    height: 45%;
+}
+
+@media (max-height: 900px){
+    #offcanvasTop-createChannel{
+        width: 100%;
+        height: 60%;
+    }
+}
