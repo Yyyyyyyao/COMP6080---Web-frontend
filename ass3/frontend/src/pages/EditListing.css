@@ -1,0 +1,13 @@
+#formImgs{
+    display: none;
+}
+.multi-file-icon{
+    display: flex;
+    justify-content: center;
+    font-size: 80px;
+    
+}
+.multi-file-icon:hover {
+    cursor: pointer;
+    background-color: #d4cfc1;
+}

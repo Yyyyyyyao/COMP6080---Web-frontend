@@ -1,0 +1,41 @@
+.ListingDetail-img{
+
+    width: 40vw;
+    height: 30vw;
+
+}
+.ListingDetail-imgItem{
+    width: 40vw;
+    height: 30vw;
+}
+.ListingDetail-imgItem img {
+    object-fit: cover;
+    width: 40vw;
+    height: 30vw;
+}
+.ListingDetail-videoItem{
+    object-fit: cover;
+    width: 40vw;
+    height: 30vw;
+}
+@media (max-width: 800px) {
+
+    .ListingDetail-img{
+    
+        width: 400px;
+        height: 300px;
+    
+    }
+
+    .ListingDetail-imgItem{
+        width: 400px;
+        height: 300px;
+    }
+    .ListingDetail-imgItem img {
+        object-fit: cover;
+        width: 400px;
+        height: 300px;
+    }
+
+    
+}

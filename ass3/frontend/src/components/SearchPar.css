@@ -1,0 +1,14 @@
+.SearchPar-err-msg{
+    width: 100%;
+    margin-bottom: 0.25rem;
+    font-size: .875em;
+    color: #dc3545;
+}
+
+.SearchParToggleCal {
+    border-color: #ff7779 !important;
+    background-color: white !important;
+    font-weight: 600 !important;
+    text-transform: inherit !important;
+    color: #ff7779 !important;
+  }

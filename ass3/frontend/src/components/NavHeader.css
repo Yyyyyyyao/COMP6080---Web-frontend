@@ -1,0 +1,8 @@
+.dropdown-menu.show{
+    width: 100px;
+    min-width: 50px;
+    
+}
+/* .dropdown-menu[data-bs-popper]{
+    left: -50% !important;
+} */

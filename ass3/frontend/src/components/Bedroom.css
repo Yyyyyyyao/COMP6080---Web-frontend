@@ -1,0 +1,9 @@
+.Bedroom-card:hover{
+    transform: scale(1.005);
+    transition: 0.5s;
+}
+
+.bed-custom-block{
+    display: flex;
+    justify-content: space-between;
+}

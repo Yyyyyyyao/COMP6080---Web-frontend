@@ -1,0 +1,19 @@
+.booking-container{
+    padding: 2%;
+    margin-bottom: 8px;
+    border-bottom: solid 1px #f0f0f0;
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-container:hover{
+    transform: scale(1.005);
+    box-shadow: 5px 5px 5px lightgray;
+    transition: 0.5s ease-out;
+}
+
+.booking-info{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

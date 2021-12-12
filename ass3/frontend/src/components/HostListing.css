@@ -1,0 +1,87 @@
+.Listing-card{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    box-shadow: 5px 10px 18px #888888;
+    margin-bottom: 2%;
+}
+
+.Listing-card:hover{
+    transform: scale(1.01);
+    transition: 0.5s ease-out;
+}
+
+.Listing-container{
+    display: flex;
+}
+.Listing-middle{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding-left: 5px;
+}
+
+.Listing-middle-title{
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+}
+
+.Listing-middle-details{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.Listing-last{
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+    margin-left: auto;
+    justify-content: space-between;
+}
+
+.Listing-publish-info{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.date-connection{
+    padding: 10px;
+}
+
+.date-form{
+    padding: 10px;
+}
+
+.Listing-thumbnail-mobile{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Listing-info-mobile{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Listing-up-mobile{
+    display: flex;
+    width: 100%;
+}
+
+.Listing-bot-mobile{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-end;
+}
+
+.Listing-btns-mobile{
+    display: flex;
+    justify-content: flex-end;
+}

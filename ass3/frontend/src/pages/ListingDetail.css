@@ -1,0 +1,46 @@
+.hasFacility{
+    font-size: 20px;
+}
+.rating-font{
+    font-size: 18px;
+}
+.rating-font:hover{
+    opacity: 75%;
+}
+.redstar{
+    color: #d9534f;
+}
+.ListingDetail-container{
+    height: 92vh;
+
+}
+.ListingDetail-info{
+    width: 40vw;
+ 
+}
+.ListingDetail-review{
+    width: 40vw;
+    
+}
+
+.ListingDetail-reviewItem{
+    width: 40vw;
+    /* height: 80px; */
+}
+
+@media (max-width: 800px) {
+    .ListingDetail-info{
+        width: 400px;
+    }
+
+    .ListingDetail-reviewItem{
+        width: 400px;
+        /* height: 80px; */
+        
+    }
+    .ListingDetail-review{
+        width: 400px;
+        /* height: 80px; */
+    }
+    
+}

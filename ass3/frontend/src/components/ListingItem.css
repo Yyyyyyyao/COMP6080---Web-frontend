@@ -1,0 +1,44 @@
+.ListingItem-card{
+    display: flex;
+    padding: 2%;
+    border-bottom: solid 1px #f0f0f0;
+}
+
+.ListingItem-card:hover{
+    transform: scale(1.05);
+    box-shadow: 5px 5px 5px lightgray;
+    transition: 0.5s ease-out;
+}
+
+.ListingItem-middle{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.ListingItem-middle-title{
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+}
+
+.ListingItem-middle-details{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.ListingItem-last{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    justify-content: space-between;
+}
+.ListingItem-img{
+    background-color: whitesmoke;
+    object-fit: cover;
+}
+
+.ListingItem-h2, .ListingItem-p {
+    word-wrap: break-word;
+}
