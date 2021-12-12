@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            /* General idea:
+                I break whole page into up and bottom 2 main block because they have different background-color;
+                For each block, I break it into left and right blocks because I find text are all at left side
+            */
+
+            body{
+                width: 100vw;
+                height: 100vh;
+                margin: 0;
+            }
+            .container{
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+    
+            .up_bg{
+                background-color: rgb(204, 204, 204);
+                display: flex;
+                width: 1398px;
+                height: 404px;
+            }
+
+            .up_left_text{
+                flex: 2;
+            }
+
+            .up_right_img{
+                flex: 1;
+                display: flex;
+            }
+
+            .img_container{
+                width: 367px; 
+                height: 210px;
+                background-color: snow;
+                position: relative;
+                top: 65px;
+            }
+
+            .text_container{
+                width: 750px; 
+                height: 300px;
+                position: relative;
+                top: 20px;
+                left: 105px;
+            }
+    
+            .down_bg{
+                width: 1398px;
+                height: 261px;
+            }
+
+            .down_text_container{
+                width: 770px; 
+                height: 200px;
+                position: relative;
+                top: 5px;
+                left: 105px;
+            }
+
+            #down_title{
+                color: rgb(145, 122, 96);
+                font-family: Oswald Regular;
+                font-size: 35px;
+            }
+
+            #up_title{
+                color: rgb(145, 122, 96);
+                font-family: Oswald Regular;
+                font-size: 40px;
+            }
+
+            .up_text{
+                color: rgb(146, 130, 117);
+                font-family: Vesper Devanagari Libre;
+                line-height: 30px;
+                font-size: 19px;
+            }
+
+            .normal_text{
+                position: relative; top: -20px;
+            }
+        </style>
+    </header>
+    <body>
+        <div class="container">
+            <div class="up_bg">
+                <div class="up_left_text">
+                    <div class="text_container">
+                        <p id="up_title">HOW WALNUTS ARE IMPORTANT TO UNSW</p>
+                        <div class="normal_text">
+                            <p class="up_text">There are three main types of walnuts found in Sydney: </p>
+                            <ul class="up_text">
+                                <li>Red walnuts; and</li>
+                                <li>Non-red walnuts</li>
+                            </ul>
+                            <p class="up_text">
+                                Walnuts really can't be oversimplified in terms of how they're eaten. It's actually very simple. You grab one, you place it on your mouth, you swallow, you smile, everyone is happy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="up_right_img">
+                    <div class="img_container">
+                        <img src="./assets/logo.png" style="position: relative; left: 20px; top: 20px;">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="down_bg">
+                <div class="down_text_container">
+                    <p id="down_title">NUT REGIONS</p>
+                    <div class="normal_text">
+                        <p class="up_text">At UNSW, nuts are grown anywhere that food can also be found. In particular, food courts. </p>
+                        <p class="up_text">
+                            It's important to understand that walnuts have a lot in common with other kinds of nuts and their respective regions too.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="AlohaChatbot"
+  agent-id="2b084b15-a99e-4da4-8550-3d67a3875396"
+  language-code="en"
+></df-messenger>
+</html>
+
+<!-- img size: 367x210 -->

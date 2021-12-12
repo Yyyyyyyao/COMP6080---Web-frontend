@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            table, th, td{
+                border: 1px solid black;
+            }
+            #removebtn{
+                margin: 10px 0;
+            }
+            #display_area{
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" id="fname"></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" id="lname"></td>
+            </tr>
+            <tr>
+                <td>Data of birth</td>
+                <td><input type="text" id="dof"></td>
+            </tr>
+            <tr>
+                <td>Favourite animal</td>
+                <td><select id="favAnimal">
+                    <option value="Haloumi">Haloumi</option>
+                    <option value="Brie">Brie</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Cities lived in</td>
+                <td>
+                    <div><input type="checkbox" name="cities" value="Adelaide"> Adelaide</div>
+                    <div><input type="checkbox" name="cities" value="Perth"> Perth</div>
+                    <div><input type="checkbox" name="cities" value="Hobart"> Hobart</div>
+                    <div><input type="checkbox" name="cities" value="Darwin"> Darwin</div>
+                </td>
+            </tr>
+        </table>
+        <button id="removebtn">Remove</button>
+        <div>
+            <textarea id="display_area" cols="60" rows="15"></textarea>
+        </div>
+        
+        <script type="text/javascript" src="test.js"></script>
+    </body>
+</html>
+

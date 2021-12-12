@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            /* General idea: 
+                Using grid as the basic structure
+            */
+            body{
+                margin: 0;
+            }
+            .grid-container {
+                display: grid;
+                width: 802px;
+                height: 802px;
+                grid-template-columns: auto auto auto auto auto auto;
+                background-color: black;
+                padding: 2.5px;
+            }
+
+            .green_block{
+                background-color: rgb(119,162,109);
+                border: 3px solid;
+                border-color: black;
+            }
+            .yellow_block{
+                background-color: rgb(200,195,101);
+                border: 3px solid;
+                border-color: black;
+                position: relative;
+            }
+            .circle{
+                background-color: rgb(146,81,61);
+                width: 122px;
+                height: 122px;
+                border-radius: 50%;
+                position: absolute;
+                top: 3px;
+                left: 3px;
+            }
+        </style>
+    </header>
+    <body>
+        <div class="grid-container">
+            <div class="yellow_block"></div>
+            <div class="green_block"></div>
+            <div class="yellow_block"></div>
+            <div class="green_block"></div>
+            <div class="yellow_block"></div>
+            <div class="green_block"></div>
+
+            <div class="green_block"></div>
+            <div class="yellow_block">
+                <div class="circle"></div>
+            </div>
+            <div class="green_block"></div>
+            <div class="yellow_block"></div>
+            <div class="green_block"></div>
+            <div class="yellow_block"></div>
+
+            <div class="yellow_block"></div>
+            <div class="green_block"></div>
+            <div class="yellow_block"></div>
+            <div class="green_block"></div>
+            <div class="yellow_block"></div>
+            <div class="green_block"></div>
+
+            <div class="green_block"></div>
+            <div class="yellow_block"></div>
+            <div class="green_block"></div>
+            <div class="yellow_block">
+                <div class="circle"></div>
+            </div>
+            <div class="green_block"></div>
+            <div class="yellow_block"></div>
+
+            <div class="yellow_block"></div>
+            <div class="green_block"></div>
+            <div class="yellow_block"></div>
+            <div class="green_block"></div>
+            <div class="yellow_block"></div>
+            <div class="green_block"></div>
+
+            <div class="green_block"></div>
+            <div class="yellow_block"></div>
+            <div class="green_block"></div>
+            <div class="yellow_block"></div>
+            <div class="green_block"></div>
+            <div class="yellow_block"></div>
+        </div>
+    </body>
+</html>

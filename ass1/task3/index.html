@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Basic idea:
+            Using flex to split the whole page into multiple blocks
+            When doing large to small viewport transitions, simply changing the layout and some details
+        -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            body{
+                margin: 0;
+                height: 100vh;
+                width: 100vw;
+                background-color: black;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            span{
+                margin-left: 8px;
+            }
+            .container{
+                display: flex;
+                height: 100%;
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .top_left{
+                display: flex;
+                width: 50%;
+                height: 45%;
+                flex-wrap: wrap;
+            }
+
+            .top_right{
+                display: flex;
+                width: 50%;
+                height: 45%;
+                flex-wrap: wrap;
+            }
+
+            .title_container{
+                display: flex;
+                width: 70%;
+                height: 35%;
+                color: white;
+                font-weight: bolder;
+                font-style: italic;
+                font-size: 65px;
+                flex-direction: column;
+                margin-top: 40px;
+                margin-left: 40px;
+                line-height: 90%;
+            }
+
+            .text_container{
+                display: flex;
+                width: 80%;
+                height: 65%;
+                margin-left: 40px;
+                flex-direction: column;
+                color:  rgb(219, 213, 213);
+                font-size: 16px;
+                margin-right: 40px;
+            }
+
+            .smoke_text{
+                width: 85%;
+                font-size: 16px;
+                letter-spacing: 1.1px;
+            }
+
+            .sub_title{
+                color: white;
+                width: 90%;
+                margin-top: 20px;
+                font-size: 23px;
+                font-style: italic;
+            }
+
+            .small_smoke_text{
+                font-size: 18px;
+                margin-top: 20px;
+            }
+            .tick_text{
+                margin-top: 20px; 
+                font-size: 23px
+            }
+
+            .middle_log{
+                display: flex;
+                width: 100%;
+                height: 20%;
+                flex-direction: column;
+                color: white;
+            }
+
+            .mid_learnmore_container{
+                display: flex;
+                flex: 2;
+                margin-left: 40px;
+                margin-right: 40px;
+                justify-content: center;
+                align-items: center;
+                width: 85%;
+            }
+
+            .learnmore_box{
+                display: flex;
+                background-color: rgb(37, 37, 37);
+                height: 75%;
+                width: 100%;
+                align-items: center;
+                
+            }
+
+            .learnmore_img_container{
+                display: flex;
+                width: 10%;
+                height: 100%;
+                justify-content: center;
+            }
+
+            .learnmore_img_text_container{
+                display: flex;
+                width: 70%;
+                height: 100%;
+                align-items: center;
+                font-style: italic;
+                font-size: 22px;
+            }
+
+            .learnmore_box_text_container{
+                display: flex;
+                width: 20%;
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .box_text{
+                border: 2px solid white;
+                padding: 10px 20px 10px 20px;
+                letter-spacing: 3px;
+            }
+            .box_text:hover{
+                background-color: #ffffff;
+                color: #000000;
+            }
+
+            .bit_img{
+                width: 40px;
+            }
+
+            .mid_signup_container{
+                display: flex;
+                flex: 3;
+                margin-left: 40px;
+                width: 85%;
+            }
+
+            .sign_up_box{
+                display: flex;
+                background-color: rgb(39,176,105);
+                width: 230px;
+                height: 50px;
+                text-align: center;
+                margin-top: 30px;
+                font-size: 20px;
+                letter-spacing: 2px;
+                align-items: center;
+                justify-content: center;
+            }
+            .sign_up_box:hover{
+                opacity: 0.5;
+            }
+
+            .bottom_table{
+                display: flex;
+                width: 95%;
+                height: 35%;
+                flex-wrap: wrap;
+                flex-direction: row;
+                color:  rgb(219, 213, 213);
+                margin-left: 40px;
+                margin-right: 40px;
+                font-size: 17px;
+                letter-spacing: 1px;
+            }
+
+            .comparison_cell{
+                display: flex;
+                width: 37%;
+                height: 11.4%;
+                border-bottom: 2px solid rgb(219, 213, 213);
+                align-items: center;
+            }
+
+            #table_big_title{
+                display: flex;
+                color: white;
+                font-style: italic;
+                font-size: 22px;
+                flex: 1;
+                align-items: center;
+            }
+
+            .us_cell, .apple_cell{
+                display: flex;
+                width: 10%;
+                height: 11.4%;
+                border-bottom: 2px solid rgb(37, 37, 37);
+                align-items: center;
+                justify-content: center;
+            }
+
+            #apple_border{
+                border-bottom: 2px solid rgb(219, 213, 213);
+            }
+
+            .google_cell{
+                display: flex;
+                width: 23%;
+                height: 11.4%;
+                border-bottom: 2px solid rgb(219, 213, 213);
+                align-items: center;
+                justify-content: center;
+            }
+
+            .facebook_cell{
+                display: flex;
+                width: 20%;
+                height: 11.4%;
+                border-bottom: 2px solid rgb(219, 213, 213);
+                align-items: center;
+                justify-content: center;
+            }
+
+            #us_col{
+                font-size: 20px;
+                color: white;
+                background-color: rgb(37, 37, 37);
+            }
+
+            .empty_row{
+                width: 100%;
+                height: 11.4%;
+                border-bottom: 2px solid rgb(219, 213, 213);
+            }
+            .example_comparison_cell{
+                display: flex;
+                width: 37%;
+                height: 21%;
+                border-bottom: 2px solid rgb(219, 213, 213);
+                flex-direction: column;
+            }
+
+            #example_comparison_text{
+                flex: 1;
+                width: 85%;
+            }
+
+            .example_us_cell, .example_apple_cell{
+                display: flex;
+                width: 10%;
+                height: 21%;
+                border-bottom: 2px solid rgb(219, 213, 213);
+                align-items: center;
+                justify-content: center;
+            }
+
+            .example_google_cell{
+                display: flex;
+                width: 23%;
+                height: 21%;
+                border-bottom: 2px solid rgb(219, 213, 213);
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .example_facebook_cell{
+                display: flex;
+                width: 20%;
+                height: 21%;
+                border-bottom: 2px solid rgb(219, 213, 213);
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .link_row{
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 22%;
+                text-decoration: underline 2.5px;
+            }
+            #m_table_big_title{
+                display: none;
+            }
+
+            #m_table_example_title{
+                display: none;
+            }
+            @media (max-width: 750px){
+                .top_left{
+                    width: 100%;
+                    height: 23%;
+                    flex-direction: column;
+                }
+                .top_right{
+                    width: 100%;
+                    height: 21%;
+                    flex-direction: column;
+                }
+                .middle_log{
+                    width: 100%;
+                    height: 18%;
+                    
+                }
+                .bottom_table{
+                    width: 100%;
+                    height: 38%;
+                    margin-left: 30px;
+                    margin-right: 30px;
+                    font-size: 14px;
+                }
+
+                .title_container{
+                    font-size: 30px;
+                    flex: 1.5;
+                    margin-top: 20px;
+                    margin-left: 30px;
+                }
+
+                .text_container{
+                    flex: 6;
+                    margin-left: 30px;
+                }
+
+                .smoke_text{
+                    font-size: 10px;
+                    width: 100%;
+                }
+
+                .sub_title{
+                    font-size: 16px;
+                    margin-top: 15px;
+                }
+
+                .small_smoke_text{
+                    font-size: 14px;
+                }
+                .tick_text{
+                    font-size: 15px;
+                }
+
+                .mid_learnmore_container{
+                    flex:2;
+                    margin-left: 30px;
+                    margin-right: 10px;
+                }
+                .mid_signup_container{
+                    flex:2;
+                    margin-left: 30px;
+                    margin-right: 10px;
+                }
+
+                .learnmore_box{
+                    flex-wrap: wrap;
+                    
+                }
+
+                .learnmore_img_container{
+                    width: 20%;
+                    height: 50%;
+                    order: 1;
+                }
+                
+                .learnmore_img_text_container{
+                    margin-left: 5%;
+                    width: 75%;
+                    height: 50%;
+                    order: 0;
+                    font-size: 16px;
+                }
+
+                .learnmore_box_text_container{
+                    margin-left: 5%;
+                    justify-content: flex-start;
+                    order: 2;
+                    width: 100%;
+                    height: 50%;
+                    font-size: 10px;
+                }
+                .sign_up_box{
+                    width: 200px;
+                    height: 40px;
+                    font-size: 15px;
+                }
+
+                .comparison_cell{
+                    width: 100%;
+                    height: 6.2%;
+                }
+
+                .us_cell, .apple_cell{
+                    width: 17%;
+                    height: 6.2%;
+                }
+                .google_cell, .facebook_cell{
+                    width: 33%;
+                    height: 6.2%;
+                }
+
+                .empty_row{
+                    width: 100%;
+                    height: 6.2%;
+                }
+
+                #table_big_title{
+                    display: none;
+                }
+                #m_table_big_title{
+                    display:flex;
+                    color: white;
+                    font-style: italic;
+                    font-size: 30px;
+                    height: 12%;
+                    border-bottom: 2px solid black;
+                    align-items: center;
+                }
+
+                .example_comparison_cell{
+                    width: 100%;
+                    height: 12%;
+                }
+
+                .example_us_cell, .example_apple_cell{
+                    width: 17%;
+                    height: 12%;
+                }
+                .example_google_cell, .example_facebook_cell{
+                    width: 33%;
+                    height: 12%;
+                    text-align: center;
+                }
+
+                .link_row{
+                    width: 100%;
+                    height: 11%;
+                }
+
+                #example_comparison_text{
+                    flex: 1;
+                    width: 75%;
+                }
+                #m_table_example_title{
+                    display: flex;
+                    color: white;
+                    font-style: italic;
+                    font-size: 20px;
+                    flex: 1;
+                    align-items: center;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="top_left">
+                <div class="title_container">
+                    <div>$0</div>
+                    <div>ON HAT STRAPS</div>
+                </div>
+                <div class="text_container">
+                    <div class="smoke_text">TRADE FEES (OR LACK THEREOF) <hr style="margin-top: 20px;"></div>
+                    <div class="sub_title">$0 ASSEMBLY FEES</div>
+                    <div class="sub_title">$0 CUSTOMISATION FEES</div>
+                    <div class="small_smoke_text">Includes:</div>
+                    <div class="tick_text">
+                        <img src="./assets/tick.svg"> <span>Hat</span>
+                    </div>
+                    <div class="tick_text">
+                        <img src="./assets/tick.svg"> <span>Hat box</span> 
+                    </div>
+                    <div class="tick_text">
+                        <img src="./assets/tick.svg"> <span>Hat cleaner</span> 
+                    </div>
+                    <div class="tick_text">
+                        <img src="./assets/tick.svg"> <span>12 day warranty</span> 
+                    </div>
+                </div>
+            </div>
+            <div class="top_right">
+                <div class="title_container">
+                    <div>NO FEE FOR HAT HOLES</div>
+                </div>
+                <div class="text_container">
+                    <div class="smoke_text">FEES FOR WHITE HATS <hr style="margin-top: 20px;"></div>
+                    <div class="sub_title">$0 ASSEMBLY FEES</div>
+                    <div class="sub_title">2% COMMISSION FOR CUSTOM WHITE HAT</div>
+                    <div class="small_smoke_text">
+                        <div>Add 0.5% for express deposit.</div>
+                        <div>10% cashback on recycling of your current hat</div>
+                    </div>
+                </div>
+            </div>
+            <div class="middle_log">
+                <div class="mid_learnmore_container">
+                    <div class="learnmore_box">
+                        <div class="learnmore_img_container"> <img src="./assets/little-diamond.svg" class="bit_img"></div>
+                        <div class="learnmore_img_text_container">CHARGE UP YOUR HEAD</div>
+                        <div class="learnmore_box_text_container">
+                            <div class="box_text">LEARN MORE</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mid_signup_container">
+                    <div class="sign_up_box">SIGN UP</div>
+                </div>
+            </div>
+            <div class="bottom_table">
+                <!-- row 1 -->
+                <div class="comparison_cell" id="m_table_big_title">HOW WE COMPARE</div>
+                <div class="comparison_cell" id="table_big_title">COMPARISON</div>
+                <div class="us_cell">Us</div>
+                <div class="google_cell">Google</div>
+                <div class="facebook_cell">Facebook</div>
+                <div class="apple_cell" id="apple_border">Apple</div>
+
+                <!-- row 2 -->
+                <div class="comparison_cell">Maximum head size</div>
+                <div class="us_cell" id="us_col">12kg</div>
+                <div class="google_cell">5kg</div>
+                <div class="facebook_cell">3kg</div>
+                <div class="apple_cell" id="apple_border">8kg</div>
+
+                <!-- row 3 -->
+                <div class="comparison_cell">Postage fees</div>
+                <div class="us_cell" id="us_col">nil</div>
+                <div class="google_cell">0.60%</div>
+                <div class="facebook_cell">up to 0.80%</div>
+                <div class="apple_cell" id="apple_border">nil</div>
+
+                <!-- row 4 -->
+                <div class="comparison_cell">Volumetric conditioning</div>
+                <div class="us_cell" id="us_col">Yes</div>
+                <div class="google_cell">no</div>
+                <div class="facebook_cell">perhaps</div>
+                <div class="apple_cell" id="apple_border">no</div>
+
+                <div class="empty_row"></div>
+
+                <!-- example row -->
+                <div class="example_comparison_cell" >
+                    <div id="m_table_example_title">EXAMPLE HAT</div>
+                    <div id="table_big_title">EXAMPLE HAT</div>
+                    <div id="example_comparison_text">Fees for a big blue hat that fits your head</div>
+                </div>
+                <div class="example_us_cell" id="us_col">$35</div>
+                <div class="example_google_cell">
+                    <div>$555*</div>
+                    <div>including $25 annual fee</div> 
+                </div>
+                <div class="example_facebook_cell">$250</div>
+                <div class="example_apple_cell">$88</div>
+
+                <!-- link -->
+                <div class="link_row">Full Pricing Details</div>
+
+            </div>
+        </div>
+    </body>
+
+</html>
